@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtnRef = document.querySelector("[data-menu-button]");
-  const navListRef = document.querySelector(".class-navigation-list");
-  const headerRef = document.querySelector(".class-header");
-  const navigationRef = document.querySelector(".class-navigation");
+  const navListRef = document.querySelector(".e-t-navigation-list");
+  const headerRef = document.querySelector(".e-t-header");
+  const navigationRef = document.querySelector(".e-t-navigation");
 
   menuBtnRef.addEventListener("click", () => {
     menuBtnRef.classList.toggle("is-open");
@@ -20,31 +20,26 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   );
 });
+document.querySelectorAll(".e-t-why-item").forEach((item) => {
+  item.addEventListener("click", () => {
+    const card = item.querySelector(".card");
+    card.classList.toggle("flipped");
+  });
+});
 
 function toggleAnswer(element) {
   const answer = element.nextElementSibling;
-  const buttonImg = element.querySelector(".class-toggle-button img");
+  const buttonImg = element.querySelector(".e-t-toggle-button img");
 
   if (answer.style.display === "none" || answer.style.display === "") {
     answer.style.display = "block";
-    buttonImg.src = "/img/faq/arrow.png";
+    buttonImg.src = "/img/Minus.png";
   } else {
     answer.style.display = "none";
-    buttonImg.src = "/img/faq/icon.png";
+    buttonImg.src = "/img/Add.png";
   }
 }
-function toggleAnswer(element) {
-  const answer = element.nextElementSibling;
-  const buttonImg = element.querySelector(".class-toggle-button img");
 
-  if (answer.style.display === "none" || answer.style.display === "") {
-    answer.style.display = "block";
-    buttonImg.style.transform = "rotate(180deg)";
-  } else {
-    answer.style.display = "none";
-    buttonImg.style.transform = "rotate(0deg)";
-  }
-}
 document.addEventListener("DOMContentLoaded", function () {
   const popup = document.getElementById("cookie-popup");
   const acceptButton = document.getElementById("accept-cookies");
